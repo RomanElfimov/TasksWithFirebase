@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,8 @@
 		E9A0B4512462A577003AA009 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9A0B44F2462A577003AA009 /* LaunchScreen.storyboard */; };
 		E9A9F0972462B0A300709AC8 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A9F0962462B0A300709AC8 /* TasksViewController.swift */; };
 		E9FC3DFC2462C28B00BE1977 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E9FC3DFB2462C28B00BE1977 /* GoogleService-Info.plist */; };
+		E9FC3DFE2462EF7500BE1977 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FC3DFD2462EF7500BE1977 /* Task.swift */; };
+		E9FC3E002462EF7F00BE1977 /* AppUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FC3DFF2462EF7F00BE1977 /* AppUser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		E9A0B4522462A577003AA009 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E9A9F0962462B0A300709AC8 /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
 		E9FC3DFB2462C28B00BE1977 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E9FC3DFD2462EF7500BE1977 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		E9FC3DFF2462EF7F00BE1977 /* AppUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +64,6 @@
 				DFB86209AA9A5E1D40BDF029 /* Pods-TasksWithFirebase.debug.xcconfig */,
 				5EF27A48D9CDAA65C7367F70 /* Pods-TasksWithFirebase.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -110,8 +113,18 @@
 			children = (
 				E9A0B4442462A576003AA009 /* AppDelegate.swift */,
 				E9A0B4462462A576003AA009 /* SceneDelegate.swift */,
+				E9FC3E012462EF9700BE1977 /* Model */,
 			);
 			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		E9FC3E012462EF9700BE1977 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E9FC3DFF2462EF7F00BE1977 /* AppUser.swift */,
+				E9FC3DFD2462EF7500BE1977 /* Task.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +245,8 @@
 			files = (
 				E9A0B4492462A576003AA009 /* LoginViewController.swift in Sources */,
 				E9A9F0972462B0A300709AC8 /* TasksViewController.swift in Sources */,
+				E9FC3E002462EF7F00BE1977 /* AppUser.swift in Sources */,
+				E9FC3DFE2462EF7500BE1977 /* Task.swift in Sources */,
 				E9A0B4452462A576003AA009 /* AppDelegate.swift in Sources */,
 				E9A0B4472462A576003AA009 /* SceneDelegate.swift in Sources */,
 			);

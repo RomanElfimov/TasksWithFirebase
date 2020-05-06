@@ -11,6 +11,8 @@ import Firebase
 
 class LoginViewController: UIViewController {
     
+    var ref: DatabaseReference!
+    
     //MARK: - Outlet
     @IBOutlet weak var warnLabel: UILabel!
     @IBOutlet weak var emailTextField: UITextField!
@@ -20,6 +22,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        ref = Database.database().reference(withPath: "users")
         
         emailTextField.delegate = self
         passwordTextField.delegate = self
@@ -93,20 +96,17 @@ class LoginViewController: UIViewController {
                 return
         }
         
-        Auth.auth().createUser(withEmail: email, password: password) { [weak self] (user, error) in
-            //Если нет ошибки и пользователь существует
-            if error == nil {
-                if user != nil {
-                    self?.displayWarningLabel(with: "Успешно")
-                    print("user is created")
-                } else {
-                    self?.displayWarningLabel(with: "Пользователь не создан")
-                    print("user is not created")
-                }
-            } else {
-                self?.displayWarningLabel(with: "Пользователь уже существует")
-                print(error?.localizedDescription)
+        Auth.auth().createUser(withEmail: email, password: password) { [weak self] (authResult, error) in
+            
+            guard error == nil, let user = authResult?.user else {
+                //пользователя нет , есть ошибка
+                print(error!.localizedDescription)
+                return
             }
+            
+            //Обновить данные по новому адресу, привязанному к конкретному пользователю
+            let userRef = self?.ref.child(user.uid)
+            userRef?.setValue(user.email, forKey: "email")
         }
     }
     
