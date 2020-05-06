@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,103 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TasksWithFirebase" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="5X4-cU-KmS">
+                                <rect key="frame" x="40" y="213.5" width="334" height="469.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="Qgl-aB-LDE">
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="102.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tasks with Firebase" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5mr-Zc-a27">
+                                                <rect key="frame" x="0.0" y="0.0" width="334" height="42.5"/>
+                                                <fontDescription key="fontDescription" name="TamilSangamMN" family="Tamil Sangam MN" pointSize="38"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пользователь не существует" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MRg-XY-Cbr">
+                                                <rect key="frame" x="0.0" y="82.5" width="334" height="20"/>
+                                                <fontDescription key="fontDescription" name="TamilSangamMN" family="Tamil Sangam MN" pointSize="18"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="MRg-XY-Cbr" firstAttribute="leading" secondItem="Qgl-aB-LDE" secondAttribute="leading" id="1jG-Ig-s95"/>
+                                            <constraint firstAttribute="trailing" secondItem="MRg-XY-Cbr" secondAttribute="trailing" id="XEh-kb-pDw"/>
+                                            <constraint firstAttribute="trailing" secondItem="5mr-Zc-a27" secondAttribute="trailing" id="daq-Wp-LNL"/>
+                                            <constraint firstItem="5mr-Zc-a27" firstAttribute="leading" secondItem="Qgl-aB-LDE" secondAttribute="leading" id="efe-HF-BKZ"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="bNQ-cT-fBE">
+                                        <rect key="frame" x="0.0" y="202.5" width="334" height="78"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NWJ-qb-BML">
+                                                <rect key="frame" x="0.0" y="0.0" width="334" height="34"/>
+                                                <fontDescription key="fontDescription" name="TamilSangamMN" family="Tamil Sangam MN" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U8l-Oh-VXy">
+                                                <rect key="frame" x="0.0" y="44" width="334" height="34"/>
+                                                <fontDescription key="fontDescription" name="TamilSangamMN" family="Tamil Sangam MN" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                            </textField>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="NWJ-qb-BML" firstAttribute="leading" secondItem="bNQ-cT-fBE" secondAttribute="leading" id="K8k-fZ-94c"/>
+                                            <constraint firstAttribute="trailing" secondItem="NWJ-qb-BML" secondAttribute="trailing" id="iJL-Ul-bmb"/>
+                                            <constraint firstAttribute="trailing" secondItem="U8l-Oh-VXy" secondAttribute="trailing" id="oOa-Z0-zwf"/>
+                                            <constraint firstItem="U8l-Oh-VXy" firstAttribute="leading" secondItem="bNQ-cT-fBE" secondAttribute="leading" id="rA8-iH-tyq"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Bbv-ch-ifr">
+                                        <rect key="frame" x="40" y="380.5" width="254" height="89"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M7Y-Rl-cuM">
+                                                <rect key="frame" x="0.0" y="0.0" width="254" height="38"/>
+                                                <fontDescription key="fontDescription" name="TamilSangamMN" family="Tamil Sangam MN" pointSize="23"/>
+                                                <state key="normal" title="Login"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gWR-at-ZkW">
+                                                <rect key="frame" x="0.0" y="58" width="254" height="31"/>
+                                                <fontDescription key="fontDescription" name="TamilSangamMN" family="Tamil Sangam MN" pointSize="17"/>
+                                                <state key="normal" title="Register"/>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="M7Y-Rl-cuM" secondAttribute="trailing" id="4jr-lN-mRO"/>
+                                            <constraint firstItem="gWR-at-ZkW" firstAttribute="leading" secondItem="Bbv-ch-ifr" secondAttribute="leading" id="Bqv-hy-RyK"/>
+                                            <constraint firstItem="M7Y-Rl-cuM" firstAttribute="leading" secondItem="Bbv-ch-ifr" secondAttribute="leading" id="SSe-cO-vkH"/>
+                                            <constraint firstAttribute="trailing" secondItem="gWR-at-ZkW" secondAttribute="trailing" id="pu2-Nj-yNv"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Bbv-ch-ifr" secondAttribute="trailing" constant="40" id="Hkj-oz-r7X"/>
+                                    <constraint firstItem="Bbv-ch-ifr" firstAttribute="leading" secondItem="5X4-cU-KmS" secondAttribute="leading" constant="40" id="Nr8-mX-8Rt"/>
+                                    <constraint firstAttribute="trailing" secondItem="bNQ-cT-fBE" secondAttribute="trailing" id="XgE-xb-0SF"/>
+                                    <constraint firstItem="Qgl-aB-LDE" firstAttribute="leading" secondItem="5X4-cU-KmS" secondAttribute="leading" id="gle-2s-Q1q"/>
+                                    <constraint firstItem="bNQ-cT-fBE" firstAttribute="leading" secondItem="5X4-cU-KmS" secondAttribute="leading" id="tVD-Jf-Dab"/>
+                                    <constraint firstAttribute="trailing" secondItem="Qgl-aB-LDE" secondAttribute="trailing" id="vi8-n7-PoM"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5X4-cU-KmS" secondAttribute="trailing" constant="40" id="6J2-TS-bek"/>
+                            <constraint firstItem="5X4-cU-KmS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Nga-ms-GbF"/>
+                            <constraint firstItem="5X4-cU-KmS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="40" id="vL0-B2-vGf"/>
+                            <constraint firstItem="5X4-cU-KmS" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="yCO-qt-cc9"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
         </scene>
     </scenes>
 </document>
