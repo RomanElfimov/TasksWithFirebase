@@ -7,16 +7,19 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TasksWithFirebase" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="TasksWithFirebase" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="5X4-cU-KmS">
-                                <rect key="frame" x="40" y="213.5" width="334" height="469.5"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Afternoon" translatesAutoresizingMaskIntoConstraints="NO" id="URr-ak-wNa">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="95" translatesAutoresizingMaskIntoConstraints="NO" id="5X4-cU-KmS">
+                                <rect key="frame" x="40" y="218.5" width="334" height="459.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="Qgl-aB-LDE">
                                         <rect key="frame" x="0.0" y="0.0" width="334" height="102.5"/>
@@ -24,13 +27,13 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tasks with Firebase" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5mr-Zc-a27">
                                                 <rect key="frame" x="0.0" y="0.0" width="334" height="42.5"/>
                                                 <fontDescription key="fontDescription" name="TamilSangamMN" family="Tamil Sangam MN" pointSize="38"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пользователь не существует" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MRg-XY-Cbr">
                                                 <rect key="frame" x="0.0" y="82.5" width="334" height="20"/>
                                                 <fontDescription key="fontDescription" name="TamilSangamMN" family="Tamil Sangam MN" pointSize="18"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -42,17 +45,31 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="bNQ-cT-fBE">
-                                        <rect key="frame" x="0.0" y="202.5" width="334" height="78"/>
+                                        <rect key="frame" x="0.0" y="197.5" width="334" height="78"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NWJ-qb-BML">
                                                 <rect key="frame" x="0.0" y="0.0" width="334" height="34"/>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.76411201584507038" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="TamilSangamMN" family="Tamil Sangam MN" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
+                                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </textField>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U8l-Oh-VXy">
                                                 <rect key="frame" x="0.0" y="44" width="334" height="34"/>
+                                                <color key="backgroundColor" white="1" alpha="0.76072843309859151" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="TamilSangamMN" family="Tamil Sangam MN" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
+                                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </textField>
                                         </subviews>
                                         <constraints>
@@ -63,17 +80,30 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Bbv-ch-ifr">
-                                        <rect key="frame" x="40" y="380.5" width="254" height="89"/>
+                                        <rect key="frame" x="40" y="370.5" width="254" height="89"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M7Y-Rl-cuM">
                                                 <rect key="frame" x="0.0" y="0.0" width="254" height="38"/>
+                                                <color key="backgroundColor" white="1" alpha="0.38971720950704225" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="TamilSangamMN" family="Tamil Sangam MN" pointSize="23"/>
-                                                <state key="normal" title="Login"/>
+                                                <state key="normal" title="Login">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="loginTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qkn-pg-mJI"/>
+                                                    <segue destination="ezd-p9-HcW" kind="show" identifier="tasksSegue" id="PEI-IY-rxG"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gWR-at-ZkW">
                                                 <rect key="frame" x="0.0" y="58" width="254" height="31"/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="0.20615096830985916" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="TamilSangamMN" family="Tamil Sangam MN" pointSize="17"/>
-                                                <state key="normal" title="Register"/>
+                                                <state key="normal" title="Register">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="registerTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0us-DV-FMg"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -96,17 +126,100 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="URr-ak-wNa" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="3AT-fn-zKk"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5X4-cU-KmS" secondAttribute="trailing" constant="40" id="6J2-TS-bek"/>
                             <constraint firstItem="5X4-cU-KmS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Nga-ms-GbF"/>
+                            <constraint firstAttribute="bottom" secondItem="URr-ak-wNa" secondAttribute="bottom" id="Po0-kc-brU"/>
+                            <constraint firstItem="URr-ak-wNa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="rds-NV-cr1"/>
                             <constraint firstItem="5X4-cU-KmS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="40" id="vL0-B2-vGf"/>
+                            <constraint firstItem="URr-ak-wNa" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="x99-JJ-UDD"/>
                             <constraint firstItem="5X4-cU-KmS" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="yCO-qt-cc9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="NWJ-qb-BML" id="s4W-xy-vel"/>
+                        <outlet property="passwordTextField" destination="U8l-Oh-VXy" id="Bui-d1-vG3"/>
+                        <outlet property="warnLabel" destination="MRg-XY-Cbr" id="dfd-yM-YTQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
+            <point key="canvasLocation" x="42.028985507246382" y="136.60714285714286"/>
+        </scene>
+        <!--Tasks-->
+        <scene sceneID="dlM-MO-SDC">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="EBA-kJ-hJq" customClass="TasksViewController" customModule="TasksWithFirebase" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gwY-rh-eU9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jdY-d8-npT">
+                                <rect key="frame" x="0.0" y="56" width="414" height="786"/>
+                                <color key="backgroundColor" red="0.33299051899999998" green="0.6865854763" blue="0.96620899439999997" alpha="0.64736465669014087" colorSpace="custom" customColorSpace="displayP3"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="O8r-DX-JzO">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="O8r-DX-JzO" id="EOg-Nf-Mfw">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="EBA-kJ-hJq" id="k4i-1c-jXR"/>
+                                    <outlet property="delegate" destination="EBA-kJ-hJq" id="VzX-Dc-fbR"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="jdY-d8-npT" firstAttribute="leading" secondItem="Kln-Vi-TyG" secondAttribute="leading" id="AhN-kI-G2X"/>
+                            <constraint firstItem="jdY-d8-npT" firstAttribute="top" secondItem="Kln-Vi-TyG" secondAttribute="top" id="NpA-c8-iUd"/>
+                            <constraint firstItem="jdY-d8-npT" firstAttribute="bottom" secondItem="gwY-rh-eU9" secondAttribute="bottom" id="Yr2-7s-Qlo"/>
+                            <constraint firstItem="jdY-d8-npT" firstAttribute="trailing" secondItem="Kln-Vi-TyG" secondAttribute="trailing" id="ldj-XW-01x"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Kln-Vi-TyG"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Tasks" id="Av2-Wg-7tC">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="jZU-cW-U7H">
+                            <connections>
+                                <action selector="addTapped:" destination="EBA-kJ-hJq" id="lUY-2G-6lb"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="jdY-d8-npT" id="peq-YT-VXu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b0a-Qd-et6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1778.2608695652175" y="136.60714285714286"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="aR4-nC-bAS">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="ezd-p9-HcW" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="4Yb-am-AhK"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="p3j-tD-mYe">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="EBA-kJ-hJq" kind="relationship" relationship="rootViewController" id="pb2-bz-tNi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kv8-0i-nl8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="871.01449275362324" y="136.95652173913044"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Afternoon" width="375" height="667"/>
+    </resources>
 </document>
