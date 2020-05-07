@@ -106,8 +106,9 @@ class LoginViewController: UIViewController {
             }
             
             //Обновить данные по новому адресу, привязанному к конкретному пользователю
-            let userRef = self?.ref.child(user.uid)
-            userRef?.setValue(user.email, forKey: "email")
+            //some bag
+//            let userRef = self?.ref.child(user.uid)
+//            userRef?.setValue(user.email, forKey: "email")
         }
     }
     

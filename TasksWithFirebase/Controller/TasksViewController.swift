@@ -30,7 +30,7 @@ class TasksViewController: UIViewController {
         
         
         //убрать пустые ячейки внизу
-        tableView.tableFooterView = UIView()
+        //tableView.tableFooterView = UIView()
         
         let longPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress))
         //нажимаем 1 секунду, срабатывает
@@ -71,9 +71,9 @@ class TasksViewController: UIViewController {
         if longPress.state == .began {
             if let indexPath = indexPath {
                 let alertController = UIAlertController(title: "Изменить", message: "", preferredStyle: .alert)
-                alertController.addTextField { (textField) in
+                alertController.addTextField { [weak self] textField in
                     textField.placeholder = "Изменить задачу"
-                    textField.text = self.tasks[indexPath.row].title
+                    textField.text = self?.tasks[indexPath.row].title
                 }
                 
                 let refreshAction = UIAlertAction(title: "Обновить", style: .default) { [weak self] _ in
