@@ -46,6 +46,7 @@ class LoginViewController: UIViewController {
     }
     
     
+    //MARK: - Method
     //Какое предупреждение показать в warnLabel
     func displayWarningLabel(with text: String) {
         warnLabel.text = text

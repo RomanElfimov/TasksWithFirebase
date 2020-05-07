@@ -10,7 +10,7 @@ import Foundation
 import Firebase
 
 struct Task {
-    let title: String
+    var title: String
     //человек, которому присвоена задача
     let userId: String
     //свойство нужно для того чтобы добраться до объекта

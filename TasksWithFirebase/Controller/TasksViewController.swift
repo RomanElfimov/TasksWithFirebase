@@ -27,6 +27,16 @@ class TasksViewController: UIViewController {
         user = AppUser(user: currentUser)
         //Поочередно добираемся до   users - user - tasks
         ref = Database.database().reference(withPath: "users").child(String(user.uid)).child("tasks")
+        
+        
+        //убрать пустые ячейки внизу
+        tableView.tableFooterView = UIView()
+        
+        let longPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress))
+        //нажимаем 1 секунду, срабатывает
+        longPressGestureRecognizer.minimumPressDuration = 1
+        tableView.addGestureRecognizer(longPressGestureRecognizer)
+        
     }
     
     // Создаем наблюдателя
@@ -51,6 +61,37 @@ class TasksViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         ref.removeAllObservers()
+    }
+    
+    @objc func handleLongPress(longPress: UILongPressGestureRecognizer) {
+        
+        let pointOfTouch = longPress.location(in: tableView)
+        let indexPath = tableView.indexPathForRow(at: pointOfTouch)
+        
+        if longPress.state == .began {
+            if let indexPath = indexPath {
+                let alertController = UIAlertController(title: "Изменить", message: "", preferredStyle: .alert)
+                alertController.addTextField { (textField) in
+                    textField.placeholder = "Изменить задачу"
+                    textField.text = self.tasks[indexPath.row].title
+                }
+                
+                let refreshAction = UIAlertAction(title: "Обновить", style: .default) { [weak self] _ in
+                    guard let textField = alertController.textFields?.first, textField.text != "" else { return }
+                    
+                    let task = self?.tasks[indexPath.row]
+                    task?.ref?.updateChildValues(["title" : textField.text!])
+                }
+                
+                let cancel = UIAlertAction(title: "Отмена", style: .default, handler: nil)
+                
+                alertController.addAction(refreshAction)
+                alertController.addAction(cancel)
+                
+                present(alertController, animated: true, completion: nil)
+            }
+        }
+        
     }
     
     
@@ -139,7 +180,7 @@ extension TasksViewController: UITableViewDelegate, UITableViewDataSource {
     }
         
     // Отрисовать галочку
-    func toggleCompetion(_ cell: UITableViewCell, isCompleted: Bool) {
+    private func toggleCompetion(_ cell: UITableViewCell, isCompleted: Bool) {
         cell.accessoryType = isCompleted ? .checkmark : .none
     }
     
