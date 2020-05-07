@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,7 +19,7 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Afternoon" translatesAutoresizingMaskIntoConstraints="NO" id="URr-ak-wNa">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="95" translatesAutoresizingMaskIntoConstraints="NO" id="5X4-cU-KmS">
+                            <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" alignment="center" spacing="95" translatesAutoresizingMaskIntoConstraints="NO" id="5X4-cU-KmS">
                                 <rect key="frame" x="40" y="218.5" width="334" height="459.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="Qgl-aB-LDE">
@@ -86,7 +87,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="254" height="38"/>
                                                 <color key="backgroundColor" white="1" alpha="0.38971720950704225" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" name="TamilSangamMN" family="Tamil Sangam MN" pointSize="23"/>
-                                                <state key="normal" title="Login">
+                                                <state key="normal" title="Войти">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
@@ -95,9 +96,9 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gWR-at-ZkW">
                                                 <rect key="frame" x="0.0" y="58" width="254" height="31"/>
-                                                <color key="backgroundColor" white="0.66666666666666663" alpha="0.20615096830985916" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" red="0.61428650518773131" green="0.61428650518773131" blue="0.61428650518773131" alpha="0.35989766725352113" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" name="TamilSangamMN" family="Tamil Sangam MN" pointSize="17"/>
-                                                <state key="normal" title="Register">
+                                                <state key="normal" title="Регистрация">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
@@ -155,9 +156,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Afternoon" translatesAutoresizingMaskIntoConstraints="NO" id="siW-0s-GvT">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                            </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jdY-d8-npT">
                                 <rect key="frame" x="0.0" y="56" width="414" height="786"/>
-                                <color key="backgroundColor" red="0.33299051899999998" green="0.6865854763" blue="0.96620899439999997" alpha="0.64736465669014087" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="separatorColor" name="ColorForTableViewSeparation"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="O8r-DX-JzO">
@@ -178,19 +183,25 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="jdY-d8-npT" firstAttribute="leading" secondItem="Kln-Vi-TyG" secondAttribute="leading" id="AhN-kI-G2X"/>
+                            <constraint firstItem="siW-0s-GvT" firstAttribute="leading" secondItem="Kln-Vi-TyG" secondAttribute="leading" id="BKv-Qd-pKb"/>
+                            <constraint firstItem="siW-0s-GvT" firstAttribute="top" secondItem="gwY-rh-eU9" secondAttribute="top" id="BsQ-2S-PDf"/>
                             <constraint firstItem="jdY-d8-npT" firstAttribute="top" secondItem="Kln-Vi-TyG" secondAttribute="top" id="NpA-c8-iUd"/>
                             <constraint firstItem="jdY-d8-npT" firstAttribute="bottom" secondItem="gwY-rh-eU9" secondAttribute="bottom" id="Yr2-7s-Qlo"/>
+                            <constraint firstAttribute="bottom" secondItem="siW-0s-GvT" secondAttribute="bottom" id="dr8-yO-CEM"/>
                             <constraint firstItem="jdY-d8-npT" firstAttribute="trailing" secondItem="Kln-Vi-TyG" secondAttribute="trailing" id="ldj-XW-01x"/>
+                            <constraint firstItem="Kln-Vi-TyG" firstAttribute="trailing" secondItem="siW-0s-GvT" secondAttribute="trailing" id="rRU-nH-4MF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Kln-Vi-TyG"/>
                     </view>
                     <navigationItem key="navigationItem" title="Tasks" id="Av2-Wg-7tC">
-                        <barButtonItem key="leftBarButtonItem" title="Sign out" id="vkz-sy-TWh">
+                        <barButtonItem key="leftBarButtonItem" title="Выйти" id="vkz-sy-TWh">
+                            <color key="tintColor" name="Color"/>
                             <connections>
                                 <action selector="signOutTapped:" destination="EBA-kJ-hJq" id="TBp-vw-PTy"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="jZU-cW-U7H">
+                            <color key="tintColor" name="Color"/>
                             <connections>
                                 <action selector="addTapped:" destination="EBA-kJ-hJq" id="lUY-2G-6lb"/>
                             </connections>
@@ -213,6 +224,13 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="p3j-tD-mYe">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="TamilSangamMN" family="Tamil Sangam MN" pointSize="19"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" name="Color"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -226,5 +244,14 @@
     </scenes>
     <resources>
         <image name="Afternoon" width="375" height="667"/>
+        <namedColor name="Color">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Color">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </namedColor>
+        <namedColor name="ColorForTableViewSeparation">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </namedColor>
     </resources>
 </document>
