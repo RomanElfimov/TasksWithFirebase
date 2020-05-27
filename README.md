@@ -39,3 +39,4 @@ Thanks realtime database you can save your notes and use them on different devic
 ## Stack: 
 ## Firebase Authentication
 ## Firebase Realtime Database
+## MVC Architecture
