@@ -10,7 +10,7 @@ Thanks realtime database you can save your notes and use them on different devic
 </div>
 
 <div>
-	<img src="Login Screen Dark.png" width="400" height="790">
+	<img src="https://github.com/RomanElfimov/TasksWithFirebase/blob/master/Screenshots/Login%20Screen%20Dark.png" width="400" height="790">
 </div>
 
 ## Add new tasks
