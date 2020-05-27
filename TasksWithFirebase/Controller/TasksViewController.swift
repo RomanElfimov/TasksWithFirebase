@@ -11,6 +11,7 @@ import Firebase
 
 class TasksViewController: UIViewController {
     
+    //MARK: - Properties
     var user: AppUser!
     var ref: DatabaseReference!
     var tasks = Array<Task>()
@@ -39,6 +40,7 @@ class TasksViewController: UIViewController {
         
     }
     
+    //MARK: - Override Methods
     // Создаем наблюдателя
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -63,6 +65,7 @@ class TasksViewController: UIViewController {
         ref.removeAllObservers()
     }
     
+    //MARK: - Selector
     @objc func handleLongPress(longPress: UILongPressGestureRecognizer) {
         
         let pointOfTouch = longPress.location(in: tableView)
@@ -178,7 +181,7 @@ extension TasksViewController: UITableViewDelegate, UITableViewDataSource {
         //Передаем изменения в базу данных
         task.ref?.updateChildValues(["completed": isCompleted])
     }
-        
+    
     // Отрисовать галочку
     private func toggleCompetion(_ cell: UITableViewCell, isCompleted: Bool) {
         cell.accessoryType = isCompleted ? .checkmark : .none

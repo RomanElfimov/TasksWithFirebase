@@ -13,12 +13,12 @@ class LoginViewController: UIViewController {
     
     var ref: DatabaseReference!
     
-    //MARK: - Outlet
+    //MARK: - Outlets
     @IBOutlet weak var warnLabel: UILabel!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
-    //MARK: - viewDidLoad
+    //MARK: - Override methods
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -88,7 +88,7 @@ class LoginViewController: UIViewController {
         }
     }
     
-
+    
     @IBAction func registerTapped(_ sender: UIButton) {
         
         guard let email = emailTextField.text, let password = passwordTextField.text, email != "", password != ""
@@ -97,22 +97,14 @@ class LoginViewController: UIViewController {
                 return
         }
         
-        Auth.auth().createUser(withEmail: email, password: password) { [weak self] (authResult, error) in
+        Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
             
-            guard error == nil, let user = authResult?.user else {
-                //пользователя нет , есть ошибка
+            guard error == nil else {
                 print(error!.localizedDescription)
                 return
             }
-            
-            //Обновить данные по новому адресу, привязанному к конкретному пользователю
-            //some bag
-//            let userRef = self?.ref.child(user.uid)
-//            userRef?.setValue(user.email, forKey: "email")
         }
     }
-    
-    
 }
 
 

@@ -10,6 +10,7 @@ import Foundation
 import Firebase
 
 struct Task {
+    
     var title: String
     //человек, которому присвоена задача
     let userId: String
